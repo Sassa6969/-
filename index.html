@@ -20,7 +20,7 @@
     .hidden {
       display: none;
     }
-    /* テーマ選択ボタン・選択肢の背景色は濃い色に設定 */
+    /* テーマ選択ボタンおよび選択肢の背景色は濃い色に設定 */
     .button, .choice {
       background-color: #333;
       color: #fff;
@@ -33,7 +33,7 @@
     .button:hover, .choice:hover {
       background-color: #555;
     }
-    /* テーマ概要表示 */
+    /* 各テーマを囲むコンテナ */
     .theme-container {
       border: 1px solid #555;
       margin: 10px auto;
@@ -41,6 +41,7 @@
       max-width: 600px;
       text-align: left;
     }
+    /* テーマ概要表示 */
     .theme-overview {
       font-size: 12px;
       margin-top: 5px;
@@ -90,8 +91,8 @@
   </div>
   
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // クイズデータ：各テーマに概要 (overview) を追加
+    window.onload = function() {
+      // クイズデータ：各テーマに概要（overview）を追加
       const quizData = [
         {
           theme: "経済・金融の基礎知識",
@@ -728,4 +729,5 @@
               correct: 0
             }
           ]
-    
+        }
+  
