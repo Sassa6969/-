@@ -33,6 +33,19 @@
     .button:hover, .choice:hover {
       background-color: #555;
     }
+    /* テーマ概要表示 */
+    .theme-container {
+      border: 1px solid #555;
+      margin: 10px auto;
+      padding: 10px;
+      max-width: 600px;
+      text-align: left;
+    }
+    .theme-overview {
+      font-size: 12px;
+      margin-top: 5px;
+      color: #ccc;
+    }
     /* モンスター画像のスタイル */
     #monster {
       margin-bottom: 20px;
@@ -78,10 +91,11 @@
   
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // クイズデータ（全6テーマ×10問）
+      // クイズデータ：各テーマに概要 (overview) を追加
       const quizData = [
         {
           theme: "経済・金融の基礎知識",
+          overview: "経済の基本概念や金融システムの基礎について学びます。",
           questions: [
             {
               question: "経済学の基本概念「需要と供給」の説明として最も適切なものはどれか？",
@@ -187,6 +201,7 @@
         },
         {
           theme: "マーケティングと戦略",
+          overview: "市場分析やマーケティング手法、戦略の基礎についての問題です。",
           questions: [
             {
               question: "4Pのマーケティングミックスに含まれない要素はどれか？",
@@ -292,6 +307,7 @@
         },
         {
           theme: "経営と組織管理",
+          overview: "組織管理や経営戦略、リーダーシップなど経営に必要な基礎知識を問う問題です。",
           questions: [
             {
               question: "マズローの欲求5段階説において、最も基本的な欲求はどれか？",
@@ -397,6 +413,7 @@
         },
         {
           theme: "国際ビジネスと文化",
+          overview: "グローバル市場でのビジネスや異文化コミュニケーションに関する問題です。",
           questions: [
             {
               question: "為替レートの変動が国際取引に与える影響はどれか？",
@@ -502,6 +519,7 @@
         },
         {
           theme: "情報技術とデジタルトランスフォーメーション",
+          overview: "最新の情報技術やデジタル化の影響、技術革新について学びます。",
           questions: [
             {
               question: "クラウドコンピューティングの主な利点はどれか？",
@@ -607,6 +625,7 @@
         },
         {
           theme: "ビジネスマナーとコミュニケーション",
+          overview: "ビジネスマナーや職場でのコミュニケーションの基本を学ぶ問題です。",
           questions: [
             {
               question: "ビジネスシーンにおける基本的な挨拶として適切なものはどれか？",
@@ -709,21 +728,4 @@
               correct: 0
             }
           ]
-        }
-      ];
-
-      // 状態管理用変数
-      let currentTheme = null;
-      let currentQuestionIndex = 0;
-      let correctCount = 0;
-      let hp = 100;
-      let xp = 0;
-
-      // DOM要素の取得
-      const menuDiv = document.getElementById("menu");
-      const themeListDiv = document.getElementById("theme-list");
-      const quizDiv = document.getElementById("quiz");
-      const quizThemeTitle = document.getElementById("quiz-theme-title");
-      const statusP = document.getElementById("status");
-      const quizQuestion = document.getElementById("quiz-question");
-      const choicesDiv = document.getElementById(
+    
